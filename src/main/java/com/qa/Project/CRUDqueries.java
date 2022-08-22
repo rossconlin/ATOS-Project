@@ -27,12 +27,6 @@ public class CRUDqueries {
 	
 	public void create(String customer_first_name, String customer_last_name, int number_of_patties, String sauce, String salad) {
 		
-		//String customer_first_name = "xxx";
-		//String customer_last_name = "xxxx";
-		//int number_of_patties = 2;
-		//String sauce = "yes";
-		//String salad = "yes";
-		
 		String createstmt = "INSERT INTO burger_order(customer_first_name, customer_last_name, number_of_patties, sauce, salad) VALUES('"+customer_first_name+"', '"+customer_last_name+"', "+number_of_patties+",'"+sauce+"','"+salad+"');";
 		try {
 			stmt.executeUpdate(createstmt);
@@ -43,7 +37,17 @@ public class CRUDqueries {
 			
 		}
 	}
+	public void read() {
+		
+	}
 	
+	public void update() {
+		
+	}
+	
+	public void delete() {
+		
+	}
 	
 	
 	
