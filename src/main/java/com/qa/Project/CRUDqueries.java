@@ -56,8 +56,15 @@ public class CRUDqueries {
 		}
 	}
 	
-	public void update() {
-		
+	public void update(int id, String updateVal) {
+		String updateStmt = "UPDATE burger_order SET customer_first_name = '" + updateVal + "' WHERE id = " + id + ";";
+		try {
+			stmt.executeUpdate(updateStmt);
+			System.out.println("Update Statement executed");
+		} catch (SQLException e) {
+			System.out.println("Bad Query");
+			e.printStackTrace();
+	}
 	}
 	
 	public void delete(int id) {

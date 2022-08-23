@@ -39,7 +39,12 @@ public class order {
 					q.read();
 					break;
 				case "update":
-					
+					System.out.println("Enter id of record to update: ");
+					int uid = sc.nextInt();
+					sc.nextLine();
+					System.out.println("Enter the new name of the customer: ");
+					String nCustomer = sc.nextLine();
+					q.update(uid, nCustomer);
 					break;
 				case "delete":
 					System.out.println("Enter id of record to delete: ");
