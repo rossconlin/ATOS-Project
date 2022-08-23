@@ -36,7 +36,7 @@ public class order {
 						q.create(a, b, numberOfPatties,c, d);
 						break;
 				case "read":
-					
+					q.read();
 					break;
 				case "update":
 					

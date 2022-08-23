@@ -2,6 +2,7 @@ package com.qa.Project;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -10,8 +11,8 @@ import java.sql.Statement;
 public class CRUDqueries {
 	
 	private Connection conn;//allows me to connect to the burger_shop db
-	private Statement stmt;// allows us to prepare the query I want to execute 
-	
+	private Statement stmt;// allows me to prepare the query I want to execute 
+	private ResultSet rs;
 	
 	public CRUDqueries() {
 		try {
@@ -38,7 +39,21 @@ public class CRUDqueries {
 		}
 	}
 	public void read() {
-		
+		String readStmt = "SELECT * FROM burger_order";
+		try {
+			rs = stmt.executeQuery(readStmt);
+			while (rs.next()) {
+				System.out.println("ID " + rs.getInt("id"));
+				System.out.println("customer first name: " + rs.getString("customer_first_name"));
+				System.out.println("customer last name: " + rs.getString("customer_last_name"));
+				System.out.println("number of patties: " + rs.getInt("number_of_patties"));
+				System.out.println("sauce: " + rs.getString("sauce"));
+				System.out.println("salad: " + rs.getString("salad"));
+			}
+		}catch(SQLException e) {
+			System.out.println("bad query");
+			e.printStackTrace();
+		}
 	}
 	
 	public void update() {
