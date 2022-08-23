@@ -57,7 +57,7 @@ public class CRUDqueries {
 	}
 	
 	public void update(int id, String updateVal) {
-		String updateStmt = "UPDATE burger_order SET customer_first_name = '" + updateVal + "' WHERE id = " + id + ";";
+		String updateStmt = "UPDATE burger_order SET customer_first_name + customer_last_name = '" + updateVal + "' WHERE id = " + id + ";";
 		try {
 			stmt.executeUpdate(updateStmt);
 			System.out.println("Update Statement executed");
