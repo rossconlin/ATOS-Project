@@ -42,7 +42,10 @@ public class order {
 					
 					break;
 				case "delete":
-					
+					System.out.println("Enter id of record to delete: ");
+					int id = sc.nextInt();
+					sc.nextLine();
+					q.delete(id);
 					break;
 					default:
 						System.out.println("Invalid Order");

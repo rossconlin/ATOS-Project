@@ -43,7 +43,7 @@ public class CRUDqueries {
 		try {
 			rs = stmt.executeQuery(readStmt);
 			while (rs.next()) {
-				System.out.println("ID " + rs.getInt("id"));
+				System.out.println("ID: " + rs.getInt("id"));
 				System.out.println("customer first name: " + rs.getString("customer_first_name"));
 				System.out.println("customer last name: " + rs.getString("customer_last_name"));
 				System.out.println("number of patties: " + rs.getInt("number_of_patties"));
@@ -60,8 +60,15 @@ public class CRUDqueries {
 		
 	}
 	
-	public void delete() {
-		
+	public void delete(int id) {
+		String delStmt = "DELETE FROM burger_order WHERE id="+id+";";
+		try {
+			stmt.executeUpdate(delStmt);
+			System.out.println("Delete Statement executed");
+		} catch (SQLException e) {
+			System.out.println("Bad Query");
+			e.printStackTrace();
+		}
 	}
 	
 	
