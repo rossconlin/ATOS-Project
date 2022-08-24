@@ -11,7 +11,7 @@ public class order {
 		return sc.nextLine();
 	}
 	
-	public void options() {
+	public String options() {
 		CRUDqueries q = new CRUDqueries();
 		String crud = getInput();
 		

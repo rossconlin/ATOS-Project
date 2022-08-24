@@ -1,0 +1,4 @@
+com\qa\Project\RunnerTest.class
+com\qa\Project\DBconfigTest.class
+com\qa\Project\CRUDqueriesTest.class
+com\qa\Project\orderTest.class
